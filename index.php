@@ -15,7 +15,7 @@ use App\Listeners\WelcomeUserListener;
 // for simplicity I register it here, as the app is booting.
 
 /*
-|	Backend Code. Mostly will be located in a bootstrap file as the app is starting.
+| Mostly will be located in a bootstrap file as the app is starting.
 */
 $observer = new Observer;
 
@@ -28,7 +28,7 @@ $observer->attach('onResetPasswordRequest', [
 $observer->attach('OnUserRegistration', new WelcomeUserListener);
 
 /*
-|	Client Code
+| Client Code
 */
 // a request is made to reset the password
 (new UserController($observer))->resetPassword(new FakeRequest);
